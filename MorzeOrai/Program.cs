@@ -69,19 +69,18 @@ namespace MorzeOrai
         {
           vissza.Append(morzeabc[betu]);
         }
+        vissza.Append(" ");
       }
 
-
-      return vissza.ToString();
-
+      return vissza.ToString().Trim();
     }
+
     static void Main(string[] args)
     {
       ABCbeolvas();
-      //Harmadik();
-      //Negyedik();
-      string kodolt = "--   ..   -.   -..   .   -.       --   ..-   ..-.   .-   .---       .---   ---   --..--       -.-   ..   ...-   ..-..   ...-   .       .-   --..       ..-   -.   .-   .-..   --   .-   ...   -   .-.-.-";
-      Morze2Szoveg(kodolt.Trim());
+      Harmadik();
+      Negyedik();
+
 
       Console.ReadLine();
     }
