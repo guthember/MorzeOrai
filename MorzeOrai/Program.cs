@@ -119,7 +119,21 @@ namespace MorzeOrai
       Console.WriteLine($"8. feladat: A leghosszabb idézet szerzője és az idézet: {melyik[0].Szerzo}: {melyik[0].Idezet}");
     }
 
+    static void Kilencedik()
+    {
+      Console.WriteLine("9. feladat: ARISZTOTELÉSZ idézetei");
 
+      #region linq select-es megoldás
+      //var arisz = from i in idezetek
+      //            where i.Szerzo == "ARISZTOTELÉSZ"
+      //            select i;
+
+      //foreach (var ar in arisz)
+      //{
+      //  Console.WriteLine($"\t- {ar.Idezet}");
+      //}
+      #endregion      
+    }
 
     static void Main(string[] args)
     {
@@ -129,6 +143,7 @@ namespace MorzeOrai
       Otodik();
       Hetedik();
       Nyolcadik();
+      Kilencedik();
 
       Console.ReadLine();
     }
