@@ -133,6 +133,14 @@ namespace MorzeOrai
       //  Console.WriteLine($"\t- {ar.Idezet}");
       //}
       #endregion      
+
+      foreach (var i in idezetek)
+      {
+        if (i.Szerzo == "ARISZTOTELÉSZ")
+        {
+          Console.WriteLine($"\t- {i.Idezet}");
+        }
+      }
     }
 
     static void Main(string[] args)
