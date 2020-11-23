@@ -19,7 +19,7 @@ namespace MorzeOrai
 
     public string Idezet
     {
-      get { return szerzo; }
+      get { return idezet; }
     }
 
     private int hossz;

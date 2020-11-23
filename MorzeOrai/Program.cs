@@ -53,7 +53,23 @@ namespace MorzeOrai
 
     static void Otodik()
     {
-      //idézetek eltárolása
+      StreamReader be = new StreamReader("morze.txt");
+
+      while (!be.EndOfStream)
+      {
+        string[] a = be.ReadLine().Split(';');
+
+        string szerzo = a[0].Trim();
+        string idezet = a[1].Trim();
+
+        idezetek.Add(new Szoveg(
+            Morze2Szoveg(szerzo),
+            Morze2Szoveg(idezet)
+          ));
+
+      }
+
+      be.Close();
     }
 
     static string Morze2Szoveg(string kodolt)
@@ -75,12 +91,18 @@ namespace MorzeOrai
       return vissza.ToString().Trim();
     }
 
+    static void Hetedik()
+    {
+      Console.WriteLine($"7. feladat: Az első idézet szerzője: {idezetek[0].Szerzo}");
+    }
+
     static void Main(string[] args)
     {
       ABCbeolvas();
       Harmadik();
       Negyedik();
-
+      Otodik();
+      Hetedik();
 
       Console.ReadLine();
     }
