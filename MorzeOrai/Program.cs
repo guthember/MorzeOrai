@@ -96,6 +96,25 @@ namespace MorzeOrai
       Console.WriteLine($"7. feladat: Az első idézet szerzője: {idezetek[0].Szerzo}");
     }
 
+    static void Nyolcadik()
+    {
+      int max = idezetek[0].Hossz;
+      int melyik = 0;
+
+      for (int i = 1; i < idezetek.Count; i++)
+      {
+        if (idezetek[i].Hossz > max)
+        {
+          max = idezetek[i].Hossz;
+          melyik = i;
+        }
+      }
+
+      Console.WriteLine($"8. feladat: A leghosszabb idézet szerzője és az idézet: {idezetek[melyik].Szerzo}: {idezetek[melyik].Idezet}");
+    }
+
+
+
     static void Main(string[] args)
     {
       ABCbeolvas();
@@ -103,6 +122,7 @@ namespace MorzeOrai
       Negyedik();
       Otodik();
       Hetedik();
+      Nyolcadik();
 
       Console.ReadLine();
     }
