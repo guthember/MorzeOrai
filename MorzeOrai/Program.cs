@@ -143,6 +143,20 @@ namespace MorzeOrai
       }
     }
 
+    static void Tizedik()
+    {
+      StreamWriter ki = new StreamWriter("forditas.txt");
+
+      foreach (var i in idezetek)
+      {
+        ki.WriteLine($"{i.Szerzo}:{i.Idezet}");
+      }
+
+      ki.Close();
+       
+      Console.WriteLine("10. feladat: forditas.txt kiírása");
+    }
+
     static void Main(string[] args)
     {
       ABCbeolvas();
@@ -152,6 +166,7 @@ namespace MorzeOrai
       Hetedik();
       Nyolcadik();
       Kilencedik();
+      Tizedik();
 
       Console.ReadLine();
     }
