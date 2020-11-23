@@ -98,19 +98,25 @@ namespace MorzeOrai
 
     static void Nyolcadik()
     {
-      int max = idezetek[0].Hossz;
-      int melyik = 0;
+      //int max = idezetek[0].Hossz;
+      //int melyik = 0;
 
-      for (int i = 1; i < idezetek.Count; i++)
-      {
-        if (idezetek[i].Hossz > max)
-        {
-          max = idezetek[i].Hossz;
-          melyik = i;
-        }
-      }
+      //for (int i = 1; i < idezetek.Count; i++)
+      //{
+      //  if (idezetek[i].Hossz > max)
+      //  {
+      //    max = idezetek[i].Hossz;
+      //    melyik = i;
+      //  }
+      //}
+      int max = idezetek.Max(x => x.Hossz);
 
-      Console.WriteLine($"8. feladat: A leghosszabb idézet szerzője és az idézet: {idezetek[melyik].Szerzo}: {idezetek[melyik].Idezet}");
+      var melyik = (from i in idezetek
+                    where i.Hossz == max
+                    select i).ToList();
+
+      //Console.WriteLine($"8. feladat: A leghosszabb idézet szerzője és az idézet: {idezetek[melyik].Szerzo}: {idezetek[melyik].Idezet}");
+      Console.WriteLine($"8. feladat: A leghosszabb idézet szerzője és az idézet: {melyik[0].Szerzo}: {melyik[0].Idezet}");
     }
 
 
